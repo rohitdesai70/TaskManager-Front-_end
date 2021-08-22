@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex justify-content-center"
+      ><h2>TASK MANAGER</h2></a
+    >
+
+    <button *ngIf="logged_in" (click)="Logout()" class="btn btn-sm btn-primary">
+      Logout
+    </button>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

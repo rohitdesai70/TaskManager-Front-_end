@@ -1,0 +1,63 @@
+<div class="row">
+    <div style="padding-left: 255px;" class="col-4">
+        <h1>LOGIN</h1>
+        <form (ngSubmit)="onSubmit()" >
+          <div style="color:red;" *ngIf="login_error">*Wrong Username or Password</div>  
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" [(ngModel)]="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+
+
+            <input type="password" [(ngModel)]="password" class="form-control" name="password" id="password">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">LOGIN</button>
+        </form>
+</div>
+
+
+<div style="padding-left: 255px;" class="col-4">
+<div class="vl" style="  border-left: 6px solid grey;  height: 500px;"></div>
+</div>
+
+
+<div style="padding-right: 255px;" class="col-4">
+    <h1>SIGNUP</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="signIn()" class="col">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">First Name</label>
+          <div style="color:red;" *ngIf="submited && help.firstName.errors">*First name is required</div>
+
+          <input formControlName="firstName"  name="first_name" type="email" class="form-control" id="sign_in_first_name" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Name</label>
+          <div style="color:red;" *ngIf="submited && help.lastName.errors">*Last name is required</div>
+
+          <input formControlName="lastName" type="email" class="form-control" name="last_name" id="sing_in_last_name" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <div style="color:red;" *ngIf="submited && help.email.errors">*Please enter proper email id</div>
+          <input formControlName="email" type="email"  name="email" class="form-control" id="sign_in_email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+          <div style="color:red;" *ngIf="submited && help.mobile.errors">*Please enter a proper mobile number</div>
+          <input formControlName="mobile" type="email"  name="mobile" class="form-control" id="sign_in_mob" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+        <div style="color:red;" *ngIf="submited && help.password.errors">*Length of the password must be greater than 5</div>
+          <input formControlName="password"  name="spassword" type="password" class="form-control" id="sign_in_pas">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">SIGNUP</button>
+      </form>
+      <!-- {{registerForm.value | json}} -->
+ </div>
+</div>
